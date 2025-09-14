@@ -420,7 +420,8 @@ class Application:
         # TODO: this doesn't seem to work in Ubuntu, what am i missing?
         img = Image.open(LOGO_FILENAME).convert('RGBA')
         # does icon need to be a specific size?
-        img = img.resize((32, 32), Image.ANTIALIAS)
+        # img = img.resize((32, 32), Image.ANTIALIAS)
+        img = img.resize((32, 32), Image.LANCZOS)
         w, h = img.size
         depth, pitch = 32, w * 4
         #SDL_CreateRGBSurfaceFrom((pixels, width, height, depth, pitch, Rmask, Gmask, Bmask, Amask)
